@@ -792,8 +792,10 @@ const App: React.FC = () => {
                       })
                     }
                   >
-                    <option value="Batsman">Batsman</option>
-                    <option value="Bowler">Bowler</option>
+                    <option value="Left-Batsman">Batsman</option>
+                    <option value="Right-Batsman">Bowler</option>
+                    <option value="Left-Bowler">Bowler</option>
+                    <option value="Right-Bowler">Bowler</option>
                     <option value="All-rounder">All-rounder</option>
                   </select>
                   <input
