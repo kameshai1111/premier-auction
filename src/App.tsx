@@ -191,6 +191,13 @@ const App: React.FC = () => {
 
   // App.tsx
 
+  const getBaseRole = (type: string) => {
+    if (type.toLowerCase().includes("wicket")) return "Wicket-keeper";
+    if (type.toLowerCase().includes("all")) return "All-rounder";
+    if (type.toLowerCase().includes("bowler")) return "Bowler";
+    return "Batsman";
+  };
+
   const handleTeamLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -860,8 +867,11 @@ const App: React.FC = () => {
                           <div className="font-bold text-[9px] sm:text-[10px] uppercase">
                             {p.name}
                           </div>
-                          <div className="text-[7px] sm:text-[8px] text-slate-400">
-                            {p.id} • {p.type}
+                          <div className="text-[7px] sm:text-[8px] text-slate-400 uppercase">
+                            {p.id} • {getBaseRole(p.type)}
+                          </div>
+                          <div className="text-[7px] sm:text-[8px] text-slate-500 uppercase font-semibold">
+                            {p.type}
                           </div>
                         </div>
                       </div>
@@ -975,12 +985,11 @@ const App: React.FC = () => {
                           <span className="bg-slate-900 text-white px-3 sm:px-5 py-1 sm:py-1.5 rounded-full text-[7px] sm:text-[9px] font-black tracking-widest uppercase">
                             ID: {auction.currentPlayer.id}
                           </span>
-                          <div className="bg-white border border-slate-200 px-3 py-1 sm:py-1.5 rounded-full shadow-sm flex items-center gap-1 sm:gap-2">
-                            {renderTypeIcon(
-                              auction.currentPlayer.type,
-                              "w-2.5 h-2.5 sm:w-3 h-3 text-slate-400"
-                            )}
-                            <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase">
+                          <div className="flex flex-col items-center leading-tight">
+                            <span className="text-[9px] sm:text-[11px] font-black text-slate-700 uppercase tracking-wide">
+                              {getBaseRole(auction.currentPlayer.type)}
+                            </span>
+                            <span className="text-[7px] sm:text-[9px] font-semibold text-slate-400 uppercase">
                               {auction.currentPlayer.type}
                             </span>
                           </div>
@@ -1339,8 +1348,13 @@ const App: React.FC = () => {
                                 <div className="text-base sm:text-xl font-black tracking-tight italic uppercase mb-1 truncate max-w-[150px]">
                                   {p.name}
                                 </div>
-                                <div className="text-[8px] sm:text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                                  {p.type} • {p.id}
+                                <div className="text-center">
+                                  <div className="text-[10px] sm:text-[12px] font-black uppercase text-slate-700">
+                                    {getBaseRole(p.type)}
+                                  </div>
+                                  <div className="text-[8px] sm:text-[9px] font-semibold text-slate-400 uppercase tracking-wide">
+                                    {p.type} • {p.id}
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1407,9 +1421,15 @@ const App: React.FC = () => {
                                     {p.name}
                                   </div>
                                 </td>
-                                <td className="px-6 sm:px-10 py-3 sm:py-5 text-[10px] sm:text-xs font-bold text-slate-500 uppercase">
-                                  {p.type}
+                                <td className="px-6 sm:px-10 py-3 sm:py-5 uppercase">
+                                  <div className="text-[11px] sm:text-sm font-black text-slate-700">
+                                    {getBaseRole(p.type)}
+                                  </div>
+                                  <div className="text-[9px] text-slate-400 font-semibold">
+                                    {p.type}
+                                  </div>
                                 </td>
+
                                 <td className="px-6 sm:px-10 py-3 sm:py-5 text-right font-black text-2xl sm:text-4xl italic tracking-tighter">
                                   ₹{p.soldPrice}
                                 </td>
