@@ -956,7 +956,7 @@ const App: React.FC = () => {
                       <div className="w-full max-w-[320px] sm:max-w-[480px] aspect-[4/3] rounded-[24px] sm:rounded-[48px] overflow-hidden shadow-2xl border-[6px] sm:border-[10px] border-white transform hover:scale-[1.01] transition-transform duration-500 bg-white shrink-0">
                         <img
                           src={auction.currentPlayer.image}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain bg-white"
                           alt="current-player"
                         />
                       </div>
