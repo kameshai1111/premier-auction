@@ -525,20 +525,22 @@ const App: React.FC = () => {
   return (
     <div className="h-screen w-full flex flex-col bg-[#F9FAFB] overflow-hidden text-slate-900">
       {/* COMPACT NAV BAR */}
+
       <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50 shrink-0 shadow-sm">
-        <div className="flex items-center gap-2 sm:gap-4">
+        <nav className="flex items-center gap-2 sm:gap-4">
           <div className="bg-slate-900 p-1.5 sm:p-2 rounded-xl">
             <GavelIcon className="text-white w-4 h-4 sm:w-5 sm:h-5" />
           </div>
-          <div className="hidden xs:block">
+
+          <div className="hidden sm:block">
             <h1 className="text-sm sm:text-lg font-black tracking-tighter uppercase italic leading-none">
-              PREMIER AUCTION
+              RPL SEASON 4
             </h1>
             <span className="text-[7px] sm:text-[8px] font-black text-slate-400 tracking-[0.2em] uppercase">
-              V5.1 COMPACT
+              AUCTION DASHBOARD
             </span>
           </div>
-        </div>
+        </nav>
 
         <nav className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
           {[
