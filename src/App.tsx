@@ -805,10 +805,10 @@ const App: React.FC = () => {
                     <option value="Right-Bowler">Right-bowler</option>
                     <option value="left-All-rounder">Left-All-rounder</option>
                     <option value="right-All-rounder">Right-All-rounder</option>
-                    <option value="wicket-keeper">
+                    <option value="left-wicket-keeper">
                       Left-WicketKeeper-batsman
                     </option>
-                    <option value="wicket-keeper">
+                    <option value="right-wicket-keeper">
                       Right-WicketKeeper-batsman
                     </option>
                   </select>
