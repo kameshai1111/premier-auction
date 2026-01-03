@@ -792,12 +792,18 @@ const App: React.FC = () => {
                       })
                     }
                   >
-                    <option value="Left-Batsman">Left-Batsman</option>
-                    <option value="Right-Batsman">Right-Batsman</option>
-                    <option value="Left-Bowler">Left-Bowler</option>
-                    <option value="Right-Bowler">Right-Bowler</option>
-                    <option value="All-rounder">All-rounder</option>
-                    <option value="wicket-keeper">wicketKeeper-batsman</option>
+                    <option value="Left-Batsman">Left-batsman</option>
+                    <option value="Right-Batsman">Right-batsman</option>
+                    <option value="Left-Bowler">Left-bowler</option>
+                    <option value="Right-Bowler">Right-bowler</option>
+                    <option value="left-All-rounder">Left-All-rounder</option>
+                    <option value="right-All-rounder">Right-All-rounder</option>
+                    <option value="wicket-keeper">
+                      Left-WicketKeeper-batsman
+                    </option>
+                    <option value="wicket-keeper">
+                      Right-WicketKeeper-batsman
+                    </option>
                   </select>
                   <input
                     type="number"
