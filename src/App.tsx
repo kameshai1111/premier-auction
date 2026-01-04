@@ -10,6 +10,7 @@ import { releasePlayerFromTeam } from "./services/releasePlayer";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { deletePlayer } from "./services/deletePlayer";
 import { deleteTeam } from "./services/deleteTeam";
+import RplLogo from "./assets/RPL_LOGO.jpeg";
 
 import React, {
   useState,
@@ -527,11 +528,17 @@ const App: React.FC = () => {
       {/* COMPACT NAV BAR */}
 
       <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50 shrink-0 shadow-sm">
-        <nav className="flex items-center gap-2 sm:gap-4">
-          <div className="bg-slate-900 p-1.5 sm:p-2 rounded-xl">
-            <GavelIcon className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+        <nav className="flex items-center gap-3 sm:gap-4">
+          {/* LOGO */}
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-black flex items-center justify-center shrink-0">
+            <img
+              src={RplLogo} // <-- your logo path
+              alt="RPL Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
 
+          {/* TEXT (RESTORED EXACTLY) */}
           <div className="hidden sm:block">
             <h1 className="text-sm sm:text-lg font-black tracking-tighter uppercase italic leading-none">
               RPL SEASON 4
